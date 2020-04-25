@@ -5,8 +5,58 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    model: '',
+    pixelRatio: '',
+    windowWidth: '',
+    windowHeight: '',
+    language: '',
+    version: '',
+    system: '',
+    platform: ''
   },
+
+  getInfo:function(){
+    var _this=this;
+    try {
+      var res = wx.getSystemInfoSync()
+      _this.setData({
+        model: res.model,
+        pixelRatio: res.pixelRatio,
+        windowWidth: res.windowWidth,
+        windowHeight: res.windowHeight,
+        language: res.language,
+        version: res.version,
+        system: res.system,
+        platform: res.platform
+      })  
+    } catch (e) {
+
+    }
+  },
+
+  // getInfo:function(){
+  //   var _this=this;
+  //   wx.getSystemInfo({
+  //     success:function(res){
+  //       _this.setData({
+  //         model: res.model,
+  //         pixelRatio: res.pixelRatio,
+  //         windowWidth: res.windowWidth,
+  //         windowHeight: res.windowHeight,
+  //         language: res.language,
+  //         version: res.version,
+  //         system: res.system,
+  //         platform: res.platform
+  //       })  
+  //     },
+  //     fail:function(res){
+
+  //     },
+  //     complete:function(res){
+
+  //     }
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面加载

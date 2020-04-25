@@ -1,2 +1,14 @@
 <!--pages/genre/genre.wxml-->
-<text>分类</text>
+<view class="container">
+  <button bindtap='getInfo'>获取系统信息</button>
+  <view wx:if="{{model !=''}}">
+    <view>手机型号:{{model}}</view>
+    <view>设备像素比:{{pixelRatio}}</view>
+    <view>窗口宽度:{{windowWidth}}</view>
+    <view>窗口高度:{{windowHeight}}</view>
+    <view>微信设置的语言:{{language}}</view>
+    <view>微信版本号:{{version}}</view>
+    <view>操作系统版本:{{system}}</view>
+    <view>客户端平台:{{platform}}</view>
+  </view>
+</view>
