@@ -4,7 +4,9 @@
     "pages/genre/genre",
     "pages/cart/cart",
     "pages/my/my",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/footer_cart/footer_cart"
+  
   ],
   "window": {
     "backgroundTextStyle": "light",

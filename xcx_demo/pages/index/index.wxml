@@ -11,5 +11,5 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 
-  <text>首页</text>
+  <text catchtap="gotodetail">首页</text>
 </view>
