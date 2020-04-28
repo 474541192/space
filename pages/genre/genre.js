@@ -69,18 +69,10 @@ Page({
   onReachBottom: function () {
 
   },
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/djy-dome
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-<<<<<<< HEAD
-
-  }
-=======
   },
   change(e){
     let {index}=e.currentTarget.dataset
@@ -89,5 +81,4 @@ Page({
       currentIndex:index
     })
       }
->>>>>>> origin/djy-dome
 })
