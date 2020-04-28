@@ -1,15 +1,188 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<view 
+class="container" 
+
+>
+
+  <!-- 搜索栏 -->
+  <view class="searchBar">
+    <view class="search_container">
+      <view class="search_icon">
+        <image class="search_img" src="../../images/search.png"/>
+      </view>
+      <view class="search_input">
+        <input 
+        type="text" 
+        class="search_input_input" 
+        placeholder = "{{searchPlaceholder}}"
+        />
+      </view>
+    </view>
   </view>
 
-  <text>首页</text>
+  <!-- 横向滚动条 -->
+  <scroll-view 
+  class="scroll-view_H tabList "
+  scroll-x="true"
+  bindtap="scroll"
+  >
+    <view 
+    class="scroll-view-item_H tabList_item" 
+    wx:for="{{tabBarList}}" 
+    wx:key="index" 
+    >
+      <text>{{item.name}}</text>
+    </view>
+  </scroll-view>
+
+  <!-- 轮播图 -->
+  <swiper 
+  class="swiper" 
+  indicator-dots="false" 
+  indicator-color="rgba(0,0,0,.3)" 
+  autoplay="false" 
+  current="0" 
+  current-item-id="" 
+  interval="3000" 
+  duration="500" 
+  circular="false" 
+  previous-margin="false" 
+  next-margin="0px" 
+  isplay-multiple-items="1" 
+  skip-hidden-item-layout="false" 
+  bindchange="" 
+  bindanimationfinish=""
+  >
+    <swiper-item wx:for="{{swiperList}}" wx:key="index">
+      <image class="swiper_item_image" src="{{item.image}}"/>
+    </swiper-item>
+
+  </swiper>
+
+  <!-- 菜单选项 -->
+  <view class="menu">
+    <view 
+    class="menu_item" 
+    wx:for="{{menu}}"
+    wx:key="index"
+    >
+      <view class="menu_item_image_container">
+        <image class="menu_item_image" src="{{item.image}}"/>
+      </view>
+      <view class="menu_item_text">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+
+  <view class="advertising">
+    <image src="{{advertising.image}}"/>
+  </view>
+
+
+  <!-- 新品推荐 -->
+
+  <view class="newGoods">
+    <view class="goods_title">
+      <text style="color:purple">— — 新品推荐 — —</text>
+    </view>
+      <scroll-view 
+      class="scroll-view_H newGoods_container "
+      scroll-x="true"
+      >
+        <view 
+        class="scroll-view-item_H newGoods_item" 
+        wx:for="{{newGoods}}" 
+        wx:key="index" 
+        >
+          <view class="newGoods_item_image">
+            <image  src="{{item.image}}"/>
+          </view>
+
+          <view class="newGoods_item_intro">
+            <text>{{item.intro}}</text>
+          </view>
+          <view class="newGoods_item_price">
+            ￥{{item.price}}
+          </view>
+      
+        </view>
+        
+    </scroll-view>
+  </view>
+
+
+  <!-- 热卖商品 -->
+  <view class="hotGoods">
+    <view class="goods_title">
+      <text style="color:rgb(167, 11, 11)">— — 热卖商品 — —</text>
+    </view>
+
+    <view class="hotGoods_container">
+        <view 
+        class="hotGoods_item" 
+        wx:for="{{hotGoods}}" 
+        wx:key="index" 
+        >
+          <view class="hotGoods_item_image">
+            <image  src="{{item.image}}"/>
+          </view>
+
+          <view class="hotGoods_item_intro">
+            <text>{{item.intro}}</text>
+          </view>
+          <view class="hotGoods_item_price">
+            ￥{{item.price}}
+          </view>
+        </view>
+    </view>
+
+
+    <view class="footer" wx:if="{{isFooterShow}}" >
+      <view class="shop_intro">
+        <view class="line"></view>
+        <!-- <text class="shop_intro_text"> -->
+          店铺信息
+        <!-- </text> -->
+        <view class="line"></view>
+      </view>
+
+      <view class="intro">
+
+        <view class="youzan">
+          <view class="youzan_img">
+            <image src="../../images/zan.png" />
+          </view>
+          <view class="youzan_text">
+            有赞
+          </view>
+        </view>
+
+
+
+        <view class="intro_text_text">有赞提供技术支持</view>
+
+
+      </view>
+    </view>
+
+
+
+
+  </view>
+
+<<<<<<< HEAD
+  <text catchtap="gotodetail">首页</text>
+=======
+
+  
+
+
+
+
+
+
+
+
+>>>>>>> origin/lgh_home
 </view>
