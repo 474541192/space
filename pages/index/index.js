@@ -77,5 +77,11 @@ Page({
         })
       },1000)
     }
+  },
+
+  gotoDetail(){
+    wx.navigateTo({
+      url: '/pages/detail/detail',
+    })
   }
 })

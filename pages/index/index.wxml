@@ -123,6 +123,7 @@ class="container"
         class="hotGoods_item" 
         wx:for="{{hotGoods}}" 
         wx:key="index" 
+        catchtap="gotoDetail"
         >
           <view class="hotGoods_item_image">
             <image  src="{{item.image}}"/>
@@ -171,18 +172,5 @@ class="container"
 
   </view>
 
-<<<<<<< HEAD
   <text catchtap="gotodetail">首页</text>
-=======
-
-  
-
-
-
-
-
-
-
-
->>>>>>> origin/lgh_home
 </view>
