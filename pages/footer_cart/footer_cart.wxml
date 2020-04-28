@@ -1,0 +1,27 @@
+<!--pages/footer_cart/footer_cart.wxml-->
+<template name='footer_cart'>
+	<view class="footer_cart_box">
+
+		<view class="footer_cart_left">
+			<view>
+				<image class="footer_cart_img" src='/images/msg.png'></image>
+				<text class="footer_cart_text">客服</text>
+			</view>
+			<navigator url="/pages/index/index" open-type="switchTab">
+				<view>
+					<image class="footer_cart_img" src='/images/gohome.png'></image>
+					<text class="footer_cart_text">店铺</text>
+				</view>
+			</navigator>
+			<view>
+				<image class="footer_cart_img" src='/images/gocart.png'></image>
+				<text class="footer_cart_text">购物车</text>
+			</view>
+		</view>
+
+		<view class="add_cart">
+			<button class="add">加入购物车</button>
+			<button class="buy">立即购买</button>
+		</view>
+	</view>
+</template>
