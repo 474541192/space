@@ -68,7 +68,10 @@ Page({
     wx.setNavigationBarTitle({
       title:"绿道优品"
     })
+
+    this.getData()
   },
+
   onReachBottom(){
     if(this.data.isFooterShow){
       setTimeout(()=>{
@@ -77,6 +80,24 @@ Page({
         })
       },1000)
     }
+  },
+  getData(){
+    wx.request({
+      url:"../../api/list.json",
+      method:"GET",
+      header:{
+        "content-type":"application/text"
+      },
+      success:(res)=>{
+        console.log(res)
+      },
+      fail:(err)=>{
+        console.log(err)
+      }
+    })
+  },
+  toSearch(){
+    
   },
 
   gotoDetail(){

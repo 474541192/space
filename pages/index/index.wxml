@@ -15,6 +15,7 @@ class="container"
         type="text" 
         class="search_input_input" 
         placeholder = "{{searchPlaceholder}}"
+        bind:tap="toSearch"
         />
       </view>
     </view>
